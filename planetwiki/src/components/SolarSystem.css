@@ -1,0 +1,169 @@
+:root {
+    /*ORBIT SIZE*/
+    --mercury-orbit-size: 130px; /* 130% of original */
+    --venus-orbit-size: 195px; /* 130% of original */
+    --earth-orbit-size: 260px; /* 130% of original */
+    --mars-orbit-size: 325px; /* 130% of original */
+    --jupiter-orbit-size: 455px; /* 130% of original */
+    --saturn-orbit-size: 585px; /* 130% of original */
+    --uranus-orbit-size: 715px; /* 130% of original */
+    --neptune-orbit-size: 845px; /* 130% of original */
+    
+    /*DURATION*/
+    --mercury-orbit-duration: 10.7s;
+    --venus-orbit-duration: 13.8s;
+    --earth-orbit-duration: 14.6s;
+    --mars-orbit-duration: 15.9s;
+    --jupiter-orbit-duration: 18.3s;
+    --saturn-orbit-duration: 19.1s;
+    --uranus-orbit-duration: 19.6s;
+    --neptune-orbit-duration: 19.9s;
+  }  
+
+.solar-system {
+    position: relative;
+    height: 100vh;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    overflow: hidden;
+  }
+
+  .sun {
+    width: 50px; /* Adjust based on your image size */
+    height: 50px; /* Adjust based on your image size */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Orbit path styles (invisible, but provides a guide for the planet) */
+.planet-orbit {
+    position: absolute;
+    border-radius: 50%;
+    /* Center the orbit path */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mercury-orbit {
+    --orbit-size: var(--mercury-orbit-size);
+    --orbit-duration: var(--mercury-orbit-duration);
+}
+
+.venus-orbit {
+    --orbit-size: var(--venus-orbit-size);
+    --orbit-duration: var(--venus-orbit-duration);
+}
+
+.earth-orbit {
+    --orbit-size: var(--earth-orbit-size);
+    --orbit-duration: var(--earth-orbit-duration);
+}
+
+.mars-orbit {
+    --orbit-size: var(--mars-orbit-size);
+    --orbit-duration: var(--mars-orbit-duration);
+}
+
+.jupiter-orbit {
+    --orbit-size: var(--jupiter-orbit-size);
+    --orbit-duration: var(--jupiter-orbit-duration);
+}
+
+.saturn-orbit {
+    --orbit-size: var(--saturn-orbit-size);
+    --orbit-duration: var(--saturn-orbit-duration);
+}
+
+.uranus-orbit {
+    --orbit-size: var(--uranus-orbit-size);
+    --orbit-duration: var(--uranus-orbit-duration);
+}
+
+.neptune-orbit {
+    --orbit-size: var(--neptune-orbit-size);
+    --orbit-duration: var(--neptune-orbit-duration);
+}
+
+.planet {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: darkgray;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -4px; /* Half of the planet's width */
+    animation: orbitPlanet var(--orbit-duration) linear infinite;
+}
+
+.mercury {
+    width: 6.8px; /* 170% of original */
+    height: 6.8px; /* 170% of original */
+    background-color: #97979F;
+    margin-left: -3.4px; /* Half of new width */
+}
+
+.venus {
+    width: 16.15px; /* 170% of original */
+    height: 16.15px; /* 170% of original */
+    background-color: #FFC649;
+    margin-left: -8.075px; /* Half of new width */
+}
+
+.earth {
+    width: 17px; /* 170% of original */
+    height: 17px; /* 170% of original */
+    background-color: #287AB8;
+    margin-left: -8.5px; /* Half of new width */
+}
+
+.mars {
+    width: 9.01px; /* 170% of original */
+    height: 9.01px; /* 170% of original */
+    background-color: #9C2E35;
+    margin-left: -4.505px; /* Half of new width */
+}
+
+.jupiter {
+    width: 37.4px; /* 170% of original */
+    height: 37.4px; /* 170% of original */
+    background-color: #C88B3A;
+    margin-left: -18.7px; /* Half of new width */
+}
+
+.saturn {
+    width: 31.45px; /* 170% of original */
+    height: 31.45px; /* 170% of original */
+    background-color: #A49B72;
+    margin-left: -15.725px; /* Half of new width */
+}
+
+.uranus {
+    width: 27.2px; /* 170% of original */
+    height: 27.2px; /* 170% of original */
+    background-color: #B2D6DB;
+    margin-left: -13.6px; /* Half of new width */
+}
+
+.neptune {
+    width: 26.35px; /* 170% of original */
+    height: 26.35px; /* 170% of original */
+    background-color: #2E5D9D;
+    margin-left: -13.175px; /* Half of new width */
+}
+
+
+@keyframes orbitPlanet {
+    0% {
+      transform: rotate(0deg) translateX(calc(var(--orbit-size) / 2));
+    }
+    100% {
+      transform: rotate(360deg) translateX(calc(var(--orbit-size) / 2));
+    }
+}

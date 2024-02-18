@@ -1,0 +1,30 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+.planet-list {
+  width: 100px; /* Or your preferred width */
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.planet-item {
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 16px; /* Or your preferred size */
+  color: #ddd; /* Light grey text, less intense than white */
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.planet-item:hover {
+  color: #fff; /* White text on hover */
+}
